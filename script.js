@@ -1,10 +1,25 @@
-function add(number, number2) {
+const calculatorButtons = document.querySelectorAll('.calc-button');
+const resultField = document.querySelector('.result');
+calculatorButtons.forEach(button => listenToButtons(button));
+function listenToButtons(button){
+    return button.addEventListener('click', function() {makeFunctional(button.id)});
+}
+function makeFunctional(buttonID){
+    if (buttonID === "reset") return resetDisplay();
+    if (buttonID === "add" || buttonID === "subtract" || buttonID === "multiply"
+    || buttonID === "divide" || buttonID === "sum") return currentOperation = buttonID;
+    return resultField.textContent += buttonID;
+}
+function resetDisplay() {
+    resultField.textContent = " "
+    return console.log("Display has been cleared.")
+}
 
+function add(number, number2) {
     return number + number2;
 }
 
 function subtract(number, number2) {
-
     return number - number2;
 }
 
