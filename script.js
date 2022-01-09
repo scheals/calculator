@@ -72,10 +72,18 @@ function resetDisplay() {
 }
 
 function removeLast() {
-    let resultText = resultField.textContent;
-    if (resultText === "") return console.log("Nothing to remove.");
-    resultText = resultText.slice(0, resultText.length-1); 
-    return resultField.textContent = resultText;
+    if (Resulter.secondNumber !== "") {
+       Resulter.secondNumber = Resulter.secondNumber.slice(0, Resulter.secondNumber.length-1);
+       return createDisplay();
+
+        }else if (Resulter.operator !== "") {
+        Resulter.operator = "";
+        return createDisplay();
+
+        } else {
+          Resulter.firstNumber = Resulter.firstNumber.slice(0, Resulter.secondNumber.length-1);
+          return createDisplay();  
+    }
 }
 
 function add(number, number2) {
