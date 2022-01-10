@@ -21,19 +21,23 @@ const Resulter ={
 function attachButtonListener(button){
     return button.addEventListener('click', function() {makeFunctional(button.id)});
 }
-function createDisplay(){
+function createDisplay(periodCheck = false){
+    if (Resulter.firstNumber.endsWith(".") && periodCheck === false) Resulter.firstNumber = Resulter.firstNumber.slice(0, Resulter.firstNumber.length-1);
+    if (Resulter.secondNumber.endsWith(".") && periodCheck === false) Resulter.secondNumber = Resulter.secondNumber.slice(0, Resulter.secondNumber.length-1);
     return resultField.textContent = `${Resulter.firstNumber}` + " " + `${Resulter.operator}` + " " + `${Resulter.secondNumber}`;
 }
 function makeFunctional(buttonID){
     if (buttonID === "reset") return resetDisplay();
     if (buttonID === "backspace") return removeLast();
     if (buttonID === "theme") return changeTheme();
-    if (buttonID === "period" && Resulter.firstNumber.includes(".") === false && Resulter.firstNumber !== "") {
-        Resulter.firstNumber += "."
-        return createDisplay();
+    if (buttonID === "period" && Resulter.firstNumber.includes(".") === false && Resulter.firstNumber !== "" && Resulter.secondNumber === "") {
+        Resulter.firstNumber += ".";
+        let dontCheckForPeriod = true;
+        return createDisplay(dontCheckForPeriod);
     } else if  (buttonID === "period" && Resulter.secondNumber.includes(".") === false && Resulter.secondNumber !== ""){
-        Resulter.secondNumber += "."
-        return createDisplay();
+        Resulter.secondNumber += ".";
+        let dontCheckForPeriod = true;
+        return createDisplay(dontCheckForPeriod);
     }
     if (buttonID === "period") return console.log("That's enough periods.")
     switch (buttonID) {
@@ -72,17 +76,18 @@ function resetDisplay() {
 }
 
 function removeLast() {
+    let dontCheckForPeriod = true;
     if (Resulter.secondNumber !== "") {
        Resulter.secondNumber = Resulter.secondNumber.slice(0, Resulter.secondNumber.length-1);
-       return createDisplay();
+       return createDisplay(dontCheckForPeriod);
 
         }else if (Resulter.operator !== "") {
         Resulter.operator = "";
-        return createDisplay();
+        return createDisplay(dontCheckForPeriod);
 
         } else {
           Resulter.firstNumber = Resulter.firstNumber.slice(0, Resulter.secondNumber.length-1);
-          return createDisplay();  
+          return createDisplay(dontCheckForPeriod);  
     }
 }
 
