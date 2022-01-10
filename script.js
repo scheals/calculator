@@ -156,6 +156,7 @@ function simulateSpaceTimeDestruction() {
     disappear(calculator);
     window.setTimeout(function () {endTimes.classList.toggle('dont-show-me')}, hideCounter * 250);
     hideCounter = 1;
+    resetDisplay();
 }
 const restartCycle = document.querySelector('.restart-cycle');
 restartCycle.addEventListener('click', function () {recreateTheUniverse()});
