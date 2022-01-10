@@ -111,7 +111,7 @@ function multiply(number, number2) {
 }
 
 function divide(number, number2) {
-    if (number2 === 0) return destroySpaceTime();
+    if (number2 === 0) return simulateSpaceTimeDestruction();
     let result = number / number2;
     Resulter.secondNumber = "";
     Resulter.operator = "";
@@ -136,4 +136,37 @@ function destroySpaceTime() {
     window.setTimeout(function() {body.removeChild(main)}, 41 * 250);
     window.setTimeout(function () {body.appendChild(div)}, 42 * 250);
     return console.log("You really did!");
+}
+let hideCounter = 1;
+function hide(element) {
+    window.setTimeout(function () {element.classList.toggle('hide-me')}, 
+    hideCounter * 250);
+    hideCounter++;
+}
+function disappear(element) {
+    window.setTimeout(function () {element.classList.toggle('dont-show-me')}, 
+    hideCounter * 250);
+}
+function simulateSpaceTimeDestruction() {
+    const endTimes = document.querySelector('.end-times');
+    const calculator = document.querySelector('.calculator');
+    const thingsToHide = document.querySelectorAll('.to-hide');
+    thingsToHide.forEach(element => hide(element));    
+    hide(calculator);
+    disappear(calculator);
+    window.setTimeout(function () {endTimes.classList.toggle('dont-show-me')}, hideCounter * 250);
+    hideCounter = 1;
+}
+const restartCycle = document.querySelector('.restart-cycle');
+restartCycle.addEventListener('click', function () {recreateTheUniverse()});
+function recreateTheUniverse () {
+    const endTimes = document.querySelector('.end-times');
+    const calculator = document.querySelector('.calculator');
+    const thingsToHide = document.querySelectorAll('.to-hide');
+    hideCounter = 1;
+    window.setTimeout(function () {endTimes.classList.toggle('dont-show-me')}, hideCounter * 250);
+    disappear(calculator);
+    hide(calculator);
+    thingsToHide.forEach(element => hide(element));
+    hideCounter = 1;    
 }
