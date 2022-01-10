@@ -111,9 +111,29 @@ function multiply(number, number2) {
 }
 
 function divide(number, number2) {
+    if (number2 === 0) return destroySpaceTime();
     let result = number / number2;
     Resulter.secondNumber = "";
     Resulter.operator = "";
     Resulter.firstNumber = String(result);
     return createDisplay();
+}
+
+function destroySpaceTime() {
+    const calculator = document.querySelector('.calculator');
+    const body = document.querySelector('body');
+    const header = document.querySelector('header');
+    const footer = document.querySelector('footer');
+    const main = document.querySelector('main');
+    window.setTimeout(function() {body.removeChild(header)}, 1000);
+    window.setTimeout(function() {body.removeChild(footer)}, 2000);
+    for (i = 1; i <= 40; i++) {
+    window.setTimeout(function () {calculator.removeChild(calculator.firstChild)}, i * 250);
+    }  
+    const div = document.createElement('div');
+    div.setAttribute('class', 'end-times');
+    div.textContent = "YOU HAVE BROKEN THE SPACE-TIME CONTINUUM";
+    window.setTimeout(function() {body.removeChild(main)}, 41 * 250);
+    window.setTimeout(function () {body.appendChild(div)}, 42 * 250);
+    return console.log("You really did!");
 }
