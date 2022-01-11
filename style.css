@@ -11,27 +11,36 @@ body {
 }
 header {
     text-align: center;
+    background-color: #C84B31;
 }
 main {
     display:flex;
     justify-content: center;
     align-items: center;
     flex: 1;
-    min-height: 75vh;
 }
 footer {
     text-align: center;
 }
 .calculator {
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: 
+    "result result result result"
+    "reset mode period backspace"
+    "n7 n8 n9 add"
+    "n4 n5 n6 subtract"
+    "n1 n2 n3 multiply"
+    "n0 sum sum divide";
     gap: 10px;
-    grid-auto-rows: minmax(30px, auto);
-    flex: 1;
     margin: 0 10%;
     background-color: #ECDBBA;
-    min-height: 70vh;
-    min-width: 70vh;
+    padding: 3%;
+    border-radius: 64px;
+    border: #191919 solid 8px;
+    width: 30%;
+    height: 90%;
 }
 .calc-button{
     color: #ECDBBA;
@@ -41,7 +50,7 @@ footer {
     font-family: 'Courier New', Courier, monospace;
 }
 .result {
-    grid-column: 1 / 4;
+    grid-area: result;
     text-align: center;
     color: #C84B31;
     background-color: #191919;
@@ -54,31 +63,63 @@ footer {
     flex:1;
     font-size: 48px;
 }
+#reset {
+    grid-area: reset;
+}
+#mode {
+    grid-area: mode;
+}
+#period {
+    grid-area: period;
+}
+#backspace {
+    grid-area: backspace;
+}
+#n7 {
+    grid-area: n7;
+}
+#n8 {
+    grid-area: n8;
+}
+#n9 {
+    grid-area: n9;
+}
 #add {
-    grid-column: 4;
-    grid-row: 2;
+    grid-area: add;
+}
+#n4 {
+    grid-area: n4;
+}
+#n5 {
+    grid-area: n5;
+}
+#n6 {
+    grid-area: n6;
 }
 #subtract {
-    grid-column: 4;
-    grid-row: 3;
+    grid-area: subtract;
 }
-#divide {
-    grid-column: 4;
-    grid-row: 4;
+#n1 {
+    grid-area: n1;
+}
+#n2 {
+    grid-area: n2;
+}
+#n3 {
+    grid-area: n3;
 }
 #multiply {
-    grid-column: 4;
-    grid-row: 5;
+    grid-area: multiply;
+}
+#n0 {
+    grid-area: n0;
 }
 #sum {
-    grid-column: 3 / 5;
-    grid-row: 6;
+    grid-area: sum;
 }
-#reset {
-    grid-column: 1 / 3;
-    grid-row: 6;
+#divide {
+    grid-area: divide;
 }
-
 .operation-btn {
     background-color: #191919;
 }
@@ -111,3 +152,4 @@ footer {
     background-color: #666666;
     color: #C84B31;
 }
+/* 25 cyfr - 3 = 22 pozycje */

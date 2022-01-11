@@ -19,50 +19,54 @@ const Resulter ={
 
 }
 function attachButtonListener(button){
-    return button.addEventListener('click', function() {makeFunctional(button.id)});
+    return button.addEventListener('click', function() {makeFunctional(button.dataset.buttonSymbol)});
 }
 function createDisplay(periodCheck = false){
     if (Resulter.firstNumber.endsWith(".") && periodCheck === false) Resulter.firstNumber = Resulter.firstNumber.slice(0, Resulter.firstNumber.length-1);
     if (Resulter.secondNumber.endsWith(".") && periodCheck === false) Resulter.secondNumber = Resulter.secondNumber.slice(0, Resulter.secondNumber.length-1);
     return resultField.textContent = `${Resulter.firstNumber}` + " " + `${Resulter.operator}` + " " + `${Resulter.secondNumber}`;
 }
-function makeFunctional(buttonID){
-    if (buttonID === "reset") return resetDisplay();
-    if (buttonID === "backspace") return removeLast();
-    if (buttonID === "theme") return changeTheme();
-    if (buttonID === "period" && Resulter.firstNumber.includes(".") === false && Resulter.firstNumber !== "" && Resulter.secondNumber === "" && Resulter.operator === "") {
+function makeFunctional(buttonSymbol){
+    if (buttonSymbol === "reset") return resetDisplay();
+    if (buttonSymbol === "backspace") return removeLast();
+    if (buttonSymbol === "theme") return changeTheme();
+    if (buttonSymbol === "period" && Resulter.firstNumber.includes(".") === false && Resulter.firstNumber !== "" && Resulter.secondNumber === "" && Resulter.operator === "") {
         Resulter.firstNumber += ".";
         let dontCheckForPeriod = true;
         return createDisplay(dontCheckForPeriod);
-    } else if  (buttonID === "period" && Resulter.secondNumber.includes(".") === false && Resulter.secondNumber !== ""){
+    } else if  (buttonSymbol === "period" && Resulter.secondNumber.includes(".") === false && Resulter.secondNumber !== ""){
         Resulter.secondNumber += ".";
         let dontCheckForPeriod = true;
         return createDisplay(dontCheckForPeriod);
     }
-    if (buttonID === "period") return console.log("That's enough periods.")
-    switch (buttonID) {
-        case "add": 
+    if (buttonSymbol === "period") return console.log("That's enough periods.")
+    switch (buttonSymbol) {
+        case "add":
+            if (Resulter.firstNumber === "") return console.log("Forgot something?");
             Resulter.operator = "+";
             return createDisplay();
         case "subtract": 
+            if (Resulter.firstNumber === "") return console.log("Forgot something?");
             Resulter.operator = "-";
             return createDisplay();
         case "multiply": 
+            if (Resulter.firstNumber === "") return console.log("Forgot something?");
             Resulter.operator = "*";
             return createDisplay();
         case "divide": 
+            if (Resulter.firstNumber === "") return console.log("Forgot something?");
             Resulter.operator = "/";
             return createDisplay();
     }
-    if (buttonID === "sum") {
+    if (buttonSymbol === "sum") {
         if (Resulter.secondNumber === "") return console.log("It takes two to tango.")
         return Resulter.operate();
     }
     if (Resulter.operator === "") {
-        Resulter.firstNumber += buttonID;
+        Resulter.firstNumber += buttonSymbol;
         return createDisplay();
     } else {
-        Resulter.secondNumber += buttonID;
+        Resulter.secondNumber += buttonSymbol;
         return createDisplay();
     }
 }
