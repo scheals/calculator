@@ -30,7 +30,7 @@ function makeFunctional(buttonID){
     if (buttonID === "reset") return resetDisplay();
     if (buttonID === "backspace") return removeLast();
     if (buttonID === "theme") return changeTheme();
-    if (buttonID === "period" && Resulter.firstNumber.includes(".") === false && Resulter.firstNumber !== "" && Resulter.secondNumber === "") {
+    if (buttonID === "period" && Resulter.firstNumber.includes(".") === false && Resulter.firstNumber !== "" && Resulter.secondNumber === "" && Resulter.operator === "") {
         Resulter.firstNumber += ".";
         let dontCheckForPeriod = true;
         return createDisplay(dontCheckForPeriod);
