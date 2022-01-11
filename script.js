@@ -30,7 +30,7 @@ function makeFunctional(buttonSymbol){
     if (buttonSymbol === "reset") return resetDisplay();
     if (buttonSymbol === "backspace") return removeLast();
     if (buttonSymbol === "theme") return changeTheme();
-    if (buttonSymbol === "period" && Resulter.firstNumber.includes(".") === false && Resulter.firstNumber !== "" && Resulter.secondNumber === "" && Resulter.operator === "") {
+    if (buttonSymbol === "period" && Resulter.firstNumber.includes(".") === false && Resulter.firstNumber !== "" && Resulter.firstNumber !== "-" && Resulter.secondNumber === "" && Resulter.operator === "") {
         Resulter.firstNumber += ".";
         let dontCheckForPeriod = true;
         return createDisplay(dontCheckForPeriod);
@@ -42,19 +42,19 @@ function makeFunctional(buttonSymbol){
     if (buttonSymbol === "period") return console.log("That's enough periods.")
     switch (buttonSymbol) {
         case "add":
-            if (Resulter.firstNumber === "") return console.log("Forgot something?");
+            if (Resulter.firstNumber === "" || Resulter.firstNumber === "-") return console.log("Forgot something?");
             Resulter.operator = "+";
             return createDisplay();
         case "subtract": 
-            if (Resulter.firstNumber === "") return console.log("Forgot something?");
+            if (Resulter.firstNumber === "" || Resulter.firstNumber === "-") return console.log("Forgot something?");
             Resulter.operator = "-";
             return createDisplay();
         case "multiply": 
-            if (Resulter.firstNumber === "") return console.log("Forgot something?");
+            if (Resulter.firstNumber === "" || Resulter.firstNumber === "-") return console.log("Forgot something?");
             Resulter.operator = "*";
             return createDisplay();
         case "divide": 
-            if (Resulter.firstNumber === "") return console.log("Forgot something?");
+            if (Resulter.firstNumber === "" || Resulter.firstNumber === "-") return console.log("Forgot something?");
             Resulter.operator = "/";
             return createDisplay();
     }
