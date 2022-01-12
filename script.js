@@ -229,6 +229,7 @@ function changeTheme() {
     const header = document.querySelector('header');
     const endTimes = document.querySelector('.end-times');
     const calculator = document.querySelector('.calculator');
+    const result = document.querySelector('.result')
     calculatorButtons.forEach(button => button.classList.toggle('dark-theme'));
     calculatorButtons.forEach(button => button.classList.toggle('light-theme'));
     restartCycle.classList.toggle('dark-theme');
@@ -241,6 +242,8 @@ function changeTheme() {
     endTimes.classList.toggle('light-theme');
     calculator.classList.toggle('dark-theme');
     calculator.classList.toggle('light-theme');
+    result.classList.toggle('dark-theme');
+    result.classList.toggle('light-theme');
     return console.log("Theme has been changed.");
 }
 
