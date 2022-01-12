@@ -89,6 +89,7 @@ function makeButtonsFunctional(buttonSymbol){
     }
 }
 function makeKeyboardFunctional(keyCode) {
+    calculatorButtons.forEach(button => button.blur());
     let doesntAffectDisplay = (keyCode === "Delete" || keyCode === "Backspace" || keyCode === "ShiftRight" || keyCode === "NumpadEnter");
     let displayLength = Resulter.firstNumber.length + Resulter.operator.length + Resulter.secondNumber.length;
     if (!doesntAffectDisplay && displayLength >= 17) return alert("Display can only handle 17 characters total, two spaces from operator included.");
