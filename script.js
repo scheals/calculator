@@ -156,9 +156,10 @@ function add(number, number2) {
     Resulter.secondNumber = "";
     Resulter.operator = "";
     result = result.toFixed(5);
-    while (result.endsWith("0") || result.endsWith(".")) {
+    while (result.endsWith("0")) {
         result = result.slice(0, result.length-1)
     }
+    if (result.endsWith(".")) result = result.slice(0, result.length-1)
     Resulter.firstNumber = result;
     return createDisplay();
 }
@@ -168,9 +169,10 @@ function subtract(number, number2) {
     Resulter.secondNumber = "";
     Resulter.operator = "";
     result = result.toFixed(5);
-    while (result.endsWith("0") || result.endsWith(".")) {
+    while (result.endsWith("0")) {
         result = result.slice(0, result.length-1)
     }
+    if (result.endsWith(".")) result = result.slice(0, result.length-1)
     Resulter.firstNumber = result;
     return createDisplay();
 }
@@ -180,9 +182,10 @@ function multiply(number, number2) {
     Resulter.secondNumber = "";
     Resulter.operator = "";
     result = result.toFixed(5);
-    while (result.endsWith("0") || result.endsWith(".")) {
+    while (result.endsWith("0")) {
         result = result.slice(0, result.length-1)
     }
+    if (result.endsWith(".")) result = result.slice(0, result.length-1)
     Resulter.firstNumber = result;
     return createDisplay();
 }
@@ -193,9 +196,10 @@ function divide(number, number2) {
     Resulter.secondNumber = "";
     Resulter.operator = "";
     result = result.toFixed(5);
-    while (result.endsWith("0") || result.endsWith(".")) {
+    while (result.endsWith("0")) {
         result = result.slice(0, result.length-1)
     }
+    if (result.endsWith(".")) result = result.slice(0, result.length-1)
     Resulter.firstNumber = result;
     return createDisplay();
 }
