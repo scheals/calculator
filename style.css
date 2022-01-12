@@ -78,7 +78,7 @@ footer {
 .result {
     grid-area: result;
     text-align: center;
-    min-height: 100px;
+    min-height: 110px;
     display: flex;
     justify-content: center;
     align-items: center;

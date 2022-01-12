@@ -29,6 +29,9 @@ function attachButtonListener(button){
 }
 
 function makeButtonsFunctional(buttonSymbol){
+    let doesntAffectDisplay = (buttonSymbol === "reset" || buttonSymbol === "backspace" || buttonSymbol === "theme" || buttonSymbol === "sum");
+    let displayLength = Resulter.firstNumber.length + Resulter.operator.length + Resulter.secondNumber.length;
+    if (!doesntAffectDisplay && displayLength >= 17) return console.log("Display full, nothing done.");
     switch (buttonSymbol) {
         case "reset":
             return resetDisplay();
@@ -86,6 +89,9 @@ function makeButtonsFunctional(buttonSymbol){
     }
 }
 function makeKeyboardFunctional(keyCode) {
+    let doesntAffectDisplay = (keyCode === "Delete" || keyCode === "Backspace" || keyCode === "ShiftRight" || keyCode === "NumpadEnter");
+    let displayLength = Resulter.firstNumber.length + Resulter.operator.length + Resulter.secondNumber.length;
+    if (!doesntAffectDisplay && displayLength >= 17) return console.log("Display full, nothing done.");
     switch (keyCode) {
         case "Delete":
             return resetDisplay();
