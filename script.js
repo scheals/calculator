@@ -224,6 +224,26 @@ function removeLast() {
     }
 }
 
+function changeTheme() {
+    const body = document.querySelector('body');
+    const header = document.querySelector('header');
+    const endTimes = document.querySelector('.end-times');
+    const calculator = document.querySelector('.calculator');
+    calculatorButtons.forEach(button => button.classList.toggle('dark-theme'));
+    calculatorButtons.forEach(button => button.classList.toggle('light-theme'));
+    restartCycle.classList.toggle('dark-theme');
+    restartCycle.classList.toggle('light-theme');
+    body.classList.toggle('dark-theme');
+    body.classList.toggle('light-theme');
+    header.classList.toggle('dark-theme');
+    header.classList.toggle('light-theme');
+    endTimes.classList.toggle('dark-theme');
+    endTimes.classList.toggle('light-theme');
+    calculator.classList.toggle('dark-theme');
+    calculator.classList.toggle('light-theme');
+    return console.log("Theme has been changed.");
+}
+
 function destroySpaceTime() {
     const calculator = document.querySelector('.calculator');
     const body = document.querySelector('body');

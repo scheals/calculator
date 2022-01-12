@@ -3,14 +3,27 @@
     margin: 0;
 }
 body {
-    background-color: #444444;
+
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     font-family: 'Courier New', Courier, monospace;
 }
+body.dark-theme {
+    background-color: #393232;
+}
+body.light-theme {
+    background-color: #444444;
+}
 header {
     text-align: center;
+
+}
+header.dark-theme {
+    background-color: #ED8D8D;
+    color: #393232;
+}
+header.light-theme {
     background-color: #C84B31;
 }
 main {
@@ -34,37 +47,58 @@ footer {
     "n1 n2 n3 sum"
     "n0 mode period sum";
     gap: 10px;
-    margin: 0 10%;
-    background-color: #ECDBBA;
     padding: 3%;
     border-radius: 64px;
+    width: 500px;
+    height: 650px;
+}
+.calculator.dark-theme {
+    background-color: #4D4545;
     border: #191919 solid 8px;
-    width: 30%;
-    height: 90%;
+}
+.calculator.light-theme {
+    background-color: #ECDBBA;
+    border: #191919 solid 8px;
 }
 .calc-button{
-    color: #ECDBBA;
-    background-color: #2D4263;
     font-weight: bold;
     font-size: 16px;
     font-family: 'Courier New', Courier, monospace;
+}
+.calc-button.dark-theme {
+    color: #ECDBBA;
+    background-color: #8D6262;
+    border-color: #ED8D8D;
+}
+.calc-button.light-theme {
+    color: #ECDBBA;
+    background-color: #2D4263;
     border-color: #C84B31;
 }
 .result {
     grid-area: result;
     text-align: center;
-    color: #C84B31;
-    background-color: #191919;
     min-height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+.result.dark-theme {
+    color: #C84B31;
+    background-color: #191919;
+}
+.result.light-theme {
+    color: #C84B31;
+    background-color: #191919;
+}
 .result-text {
     flex:1;
     font-size: 48px;
 }
-.operation-btn {
+.operation-btn.dark-theme {
+    background-color: #191919;
+}
+.operation-btn.light-theme {
     background-color: #191919;
 }
 .end-times {
@@ -72,11 +106,17 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: orange;
-    background-color: #191919;
     font-size: 64px;
     height: 90vh;
     text-align: center;
+}
+.end-times.dark-theme {
+    color: #ED8D8D;
+    background-color: #393232;
+}
+.end-times.light-theme {
+    color: orange;
+    background-color: #191919;
 }
 .hide-me {
     visibility: hidden;
@@ -86,13 +126,24 @@ footer {
 }
 .restart-cycle {
     padding: 64px 128px;
-    border: 8px solid orange;
-    background-color: #444444;
-    color: orange;
     font-family: 'Courier New', Courier, monospace;
     font-size: 64px;
 }
-.restart-cycle:hover {
+.restart-cycle.dark-theme {
+    border: 8px solid #ED8D8D;
+    background-color: #444444;
+    color: #ED8D8D;
+}
+.restart-cycle.light-theme {
+    border: 8px solid orange;
+    background-color: #444444;
+    color: orange;
+}
+.restart-cycle.dark-theme:hover {
+    background-color: #222222;
+    color: palevioletred;
+}
+.restart-cycle.light-theme:hover {
     background-color: #666666;
     color: #C84B31;
 }
