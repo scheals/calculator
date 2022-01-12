@@ -28,11 +28,11 @@ footer {
     grid-template-rows: repeat(6, 1fr);
     grid-template-areas: 
     "result result result result"
-    "reset mode period backspace"
-    "n7 n8 n9 add"
-    "n4 n5 n6 subtract"
-    "n1 n2 n3 multiply"
-    "n0 sum sum divide";
+    "reset backspace add subtract"
+    "n7 n8 n9 multiply"
+    "n4 n5 n6 divide"
+    "n1 n2 n3 sum"
+    "n0 mode period sum";
     gap: 10px;
     margin: 0 10%;
     background-color: #ECDBBA;
@@ -48,6 +48,7 @@ footer {
     font-weight: bold;
     font-size: 16px;
     font-family: 'Courier New', Courier, monospace;
+    border-color: #C84B31;
 }
 .result {
     grid-area: result;
@@ -62,6 +63,38 @@ footer {
 .result-text {
     flex:1;
     font-size: 48px;
+}
+.operation-btn {
+    background-color: #191919;
+}
+.end-times {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: orange;
+    background-color: #191919;
+    font-size: 64px;
+    height: 90vh;
+    text-align: center;
+}
+.hide-me {
+    visibility: hidden;
+}
+.dont-show-me {
+    display: none;
+}
+.restart-cycle {
+    padding: 64px 128px;
+    border: 8px solid orange;
+    background-color: #444444;
+    color: orange;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 64px;
+}
+.restart-cycle:hover {
+    background-color: #666666;
+    color: #C84B31;
 }
 #reset {
     grid-area: reset;
@@ -120,36 +153,3 @@ footer {
 #divide {
     grid-area: divide;
 }
-.operation-btn {
-    background-color: #191919;
-}
-.end-times {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: orange;
-    background-color: #191919;
-    font-size: 64px;
-    height: 90vh;
-    text-align: center;
-}
-.hide-me {
-    visibility: hidden;
-}
-.dont-show-me {
-    display: none;
-}
-.restart-cycle {
-    padding: 64px 128px;
-    border: 8px solid orange;
-    background-color: #444444;
-    color: orange;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 64px;
-}
-.restart-cycle:hover {
-    background-color: #666666;
-    color: #C84B31;
-}
-/* 25 cyfr - 3 = 22 pozycje */
