@@ -33,8 +33,16 @@ For offline use simply download the files to one directory and open index.html i
 
 ## Reflections
 
-This is it: the finale of Foundations part of The Odin Project. Without creating a flowchart and pseudocoding the approach before getting into nitty-gritty of the project I'd have a very hard time completing it. At the very beginning of the project I was debating how the inputs and the output are going to work. I figured that `.textContent` route is going to be dangerous and prone to errors so I planned my calculator out in a way where the output is always based on what actually is stored in the variables and that it never takes into account the `.textContent` of the display. This meant there was no way for anything to show up in a display before it was actually accepted by the code and put into a variable. Thus, that was my first time using an Object of my own in JavaScript. I found this approach great and when I had to modify the code to meet the specification of chaining operations I already knew what I need to modify and how. It was painless. Also, I got plenty of practice with cleaning up my functions so they don't do more than there's on the tin.
+This is it: the finale of Foundations part of The Odin Project. Without creating a flowchart and pseudocoding the approach before getting into nitty-gritty of the project I'd have a very hard time completing it. At the very beginning of the project I was debating how the inputs and the output are going to work. I figured that `.textContent` route is going to be dangerous and prone to errors so I planned my calculator out in a way where the output is always based on what actually is stored in the variables and that it never takes into account the `.textContent` of the display. This meant there was no way for anything to show up in a display before it was actually accepted by the code and put into a variable. Thus, that was my first time using an Object of my own in JavaScript. I found this approach great and when I had to modify the code to meet the specification of chaining operations I already knew what I need to modify and how. It was painless. Also, I got plenty of practice with cleaning up my functions so they don't do more than there's on the tin. This was also my first time doing multiple themes and using CSS Grid. Overall this is what I learned:
+* How to better structure my code
+* How to plan ahead and figure out the best approach to a problem
+* More in-depth understanding of DOM Manipualtion with JavaScript
+* How to use an Object in your code and why is it useful
+* How changing themes *might* be implemented
+* How to use CSS Grid
+* Become more acquainted with `switch` statements
 
 ## Acknowledgements 
-Eduardo06sp and Man0war from TOP Discord for amazing feedback.
+Eduardo06sp and Man0war from TOP Discord for amazing feedback
 README layout from [Chargrilled Chook](https://github.com/ChargrilledChook)
+Idea for space-continuum destruction from a game called Outer Wilds
