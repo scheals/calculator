@@ -44,5 +44,7 @@ This is it: the finale of Foundations part of The Odin Project. Without creating
 
 ## Acknowledgements 
 Eduardo06sp and Man0war from TOP Discord for amazing feedback
+
 README layout from [Chargrilled Chook](https://github.com/ChargrilledChook)
+
 Idea for space-continuum destruction from a game called Outer Wilds
