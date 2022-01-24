@@ -21,7 +21,7 @@ For offline use simply download the files to one directory and open index.html i
 
 ### UI / UX
 * Keep past user inputs in a different section of display
-* Let user choose between big display and reduced number length or smaller display and longer number length
+* Let user choose between big number display and reduced number length or smaller number display and longer number length
 
 ### Internal
 * Code clean-up, especially fix the event listener functions
